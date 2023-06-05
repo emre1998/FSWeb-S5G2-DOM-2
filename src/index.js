@@ -32,12 +32,14 @@ for (let i = 0; i < aTags.length; i++) {
   window.addEventListener('load', function() {
     this.alert('Hoşgeldiniz!');
   });
-  document.addEventListener("keydown", function(event) {
-    if (event.key === " ") {
-      var audio = new Audio("mocks/img/COMCell_Iphone touch sound 2 (ID 2038)_BSB.mp3");
-      audio.play();
-    }
-  });
+  document.querySelectorAll("img")[1].addEventListener("wheel",function(e){
+    e.preventDefault();
+    e.target.src = "https://picsum.photos/400/300";
+    setTimeout(() => {
+        e.target.src = "http://localhost:9000/img/adventure.jpg";
+    }, 1000);
+});
+ 
   document.querySelector("h2").addEventListener("click", function(event) {
     event.target.style.fontSize = "4rem";
     event.target.style.color = "red";

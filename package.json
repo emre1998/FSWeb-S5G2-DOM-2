@@ -5,8 +5,10 @@
     "start": "fkill :9000 :3000 -s && concurrently \"npm:backend\" \"npm:frontend\"",
     "frontend": "webpack serve --open",
     "backend": "node mocks/api.js",
-    "test": "cross-env NODE_ENV=testing jest --verbose"
-  },
+    "test": "cross-env NODE_ENV=testing jest --verbose",
+    "build": "webpack"
+    },
+    
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/plugin-transform-runtime": "^7.17.0",
